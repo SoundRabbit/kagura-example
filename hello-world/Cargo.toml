@@ -1,8 +1,13 @@
 [package]
 name = "hello-world"
 version = "0.1.0"
-authors = ["SoundRabbit <soundrabbitstd@gmail.com>"]
+authors = ["neunyan <soundrabbitstd@gmail.com>"]
 edition = "2018"
+description = "examples of kagura"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/SoundRabbit/kagura-example"
+homepage = "https://github.com/SoundRabbit/kagura-example"
+readme = "../README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
