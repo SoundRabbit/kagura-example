@@ -1,28 +1,28 @@
 extern crate kagura;
 extern crate wasm_bindgen;
 
+use kagura::prelude::*;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(start)]
 pub fn main() {
-    kagura::run(kagura::Component::new(State, update, render), "app");
+    kagura::run(Component::new(State {}, update, render), "app");
 }
 
-struct State;
+struct State {}
 
-struct Msg;
+enum Msg {}
 
-fn update(_: &mut State, _: Msg) -> Option<()> {None}
+enum Sub {}
 
-fn render(_: &State) -> kagura::Html<Msg> {
-    use kagura::Html;
-    use kagura::Attributes;
-    use kagura::Events;
+fn update(_: &mut State, _: Msg) -> Cmd<Msg, Sub> {
+    Cmd::none()
+}
+
+fn render(_: &State) -> Html<Msg> {
     Html::h1(
         Attributes::new(),
         Events::new(),
-        vec![
-            Html::unsafe_text("hello kagura"),
-        ],
+        vec![Html::text("hello kagura")],
     )
 }
